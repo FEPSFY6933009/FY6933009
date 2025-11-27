@@ -83,20 +83,53 @@ p.exl {
  <button id="colorButton">Click me to change colour</button>
  
 <script>
-// Get a reference to the button element
 var button = document.getElementById("colorButton");
- 
- // Function to change the button color
-function changeColor() {
-  // Generate a random color (hexadecimal)
+ function changeColor() {
   var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
- 
-  // Set the button's background color to the random color
-  button.style.backgroundColor = randomColor;
+   button.style.backgroundColor = randomColor;
 }
-  // Add a click event listener to the button
  button.addEventListener("click", changeColor);
 </script>
 </body>
 </html>
-                                                                    
+
+<div id="last-updated">Loading last update time...</div>
+
+ <Verify Button>
+<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 12px auto; padding:8px 16px;>
+    Verify Last Modified Time
+ </button>
+
+ <script>
+ async function getLastUpdatedTime() {
+ const username = 'FEPSFY6933009' ;
+ const repo = 'FY633009' ;
+ const url = 'https://api.github.com/repos/${FEPSFY6933009}/${FY6933009}/commits';
+ try {
+ const response = await fetch(url, {
+ method: 'GET' ,
+ headers: { ,
+ 'Accept': 'application/vnd.github.v3+json',
+ }
+ });
+ if (!response.ok) {
+ throw new Error('Error fetching data: $(response.status} - ${response.statusText}');
+ }
+ const commits = await response.json();
+ if (commits && commits.length > 0) {
+ const lastCommitDate = new Date(commits[0].commit.committer.date);
+
+ document.getElementById('last-updated').innerText = 'Last Modified Time: ${lastCommitDate.toLocaleString()}';
+ } else {
+ document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+ }
+ }
+async function verifyLastUpdatedTime() {
+ document.getElementById('last-updated').innerText = 'Verifying...';
+ await getLastUpdatedTime();
+ alert("Last Modified Time has been successfully verified from GitHub API.");
+ }
+
+window.onload = getLastUpdatedTime;
+</script> 
+ 
