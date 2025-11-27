@@ -137,3 +137,23 @@ async function verifyLastUpdatedTime() {
 window.onload = getLastUpdatedTime;
 </script> 
  
+<p id="totalWordCount"></p>
+
+  <hr>
+
+  <script>
+   function displayWordCount(sectionId, outputId) {
+    const text = document.getElementById(sectionId).textContent;
+    const wordArray = text.trim()split(/\s+/);
+    const wordCount = wordArray.length;
+    return wordCount;
+   }
+   function displayTotalWordCount() {
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    const totalWordCount = IntroductionCount + Analysiscount;
+    document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount}';
+   }
+   window.onload = displayTotalWordCount;
+  </script>
+  </script>
