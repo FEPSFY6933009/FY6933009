@@ -171,9 +171,9 @@ var button = document.getElementById("colorButton");
     return wordCount;
    }
    function displayTotalWordCount() {
-    const IntroductionCount = displayWordCount("Introduction");
-    const AnalysisCount = displayWordCount("Analysis");
-    const AbstractCount = displayWordCount("Abstract");
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    const AbstractCount = displayWordCount("Abstract_InText");
     const totalWordCount = IntroductionCount + Analysiscount + AbstractCount;
     document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount}';
    }
