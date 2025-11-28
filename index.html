@@ -52,7 +52,9 @@ p.exl {
 <body style="background-color:#BADCFF;margin-left:50px;">
 
  <h3 id="Abstract">Abstract</h3>
-<p class="ex1>
+ <pre id="Abstract_InText">
+ </pre>
+ 
  
  
 <h3 id="Introduction">Introduction</h3>
@@ -173,9 +175,10 @@ window.onload = getLastUpdatedTime;
     return wordCount;
    }
    function displayTotalWordCount() {
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    const totalWordCount = IntroductionCount + Analysiscount;
+    const IntroductionCount = displayWordCount("Introduction");
+    const AnalysisCount = displayWordCount("Analysis");
+    const AbstractCount = displayWordCount("Abstract");
+    const totalWordCount = IntroductionCount + Analysiscount + AbstractCount;
     document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount}';
    }
    window.onload = displayTotalWordCount;
