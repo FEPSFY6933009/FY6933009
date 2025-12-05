@@ -3,8 +3,6 @@
  <html>
   
    <head>
-    <title>Global Carbon Dioxide Emissions By Category</title>
-    <script type="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
      <img src="WebBanner2023.png" alt="Banner" width="900" height="300">
      <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
      <h2>Student URN: 6933009</h2>
@@ -45,6 +43,10 @@ p.exl {
   margin-left: 250px;
 }
 </style>
+
+    <title>Global Carbon Dioxide Emissions By Category</title>
+    <script type="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
+    
     </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css">
@@ -111,17 +113,17 @@ p.exl {
    
  <div id="chart_div"></div>
  <script type="text/javascript">
-  google.charts.load('current',{'packages':['corechart']});
+  google.charts.load('current', {'packages': ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
   function drawChart() {
    var data = google.visualization.arrayToDataTable([
-    ['Task','Percentage of global emissions'],
-    ['Agriculture',9]
-    ['Transportation',29]
-    ['Commercial and Residential',12]
-    ['Industry',14]
-    ['Concrete',8]
-    ['Electricity',28]
+    ['Task', 'Percentage of global emissions'],
+    ['Agriculture', 9],
+    ['Transportation', 29],
+    ['Commercial and Residential', 12],
+    ['Industry', 14],
+    ['Concrete', 8],
+    ['Electricity', 28]
     ]);
 
    var options = {
