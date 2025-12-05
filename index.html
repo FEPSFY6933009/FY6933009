@@ -3,6 +3,8 @@
  <html>
   
    <head>
+    <title>Global Carbon Dioxide Emissions By Category</title>
+    <script type="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
      <img src="WebBanner2023.png" alt="Banner" width="900" height="300">
      <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
      <h2>Student URN: 6933009</h2>
@@ -106,6 +108,30 @@ p.exl {
   <h3 style="font-family:TimesNewRoman;"><b>Concrete's carbon contributions</b></h3>
  <p id="Analysis_InText">
    <p style="font-family:TimesNewRoman; font-size: 16px; color:dark blue;">
+   
+ <div id="chart_div"></div>
+ <script type="text/javascript">
+  google.charts.load('current',{'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+   var data = google.visualization.arrayToDataTable([
+    ['Task','Percentage of global emissions'],
+    ['Agriculture',9]
+    ['Transportation',29]
+    ['Commercial and Residential',12]
+    ['Industry',14]
+    ['Concrete',8]
+    ['Electricity',28]
+    ]);
+
+   var options = {
+    title: 'Global Carbon Dioxide Emissions'
+   };
+   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+   chart.draw(data,options);
+  }
+ </script>
+ 
  Concrete had its first major 'boom' in usage during post-World War Two development. To this day, major cities, scuh as 
  Birmingham are defined by large concrete structures. Concrete is the source of about 8% of the world's carbon dioxide 
  emissions <a href="https://www.chathamhouse.org/2018/06/making-concrete-change-innovation-low-carbon-cement-and-concrete">(Lehne,
